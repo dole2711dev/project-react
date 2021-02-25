@@ -1,8 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Nav from "./components/Nav";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
 function App() {
-	return <div className="App"></div>;
+	return (
+		<>
+			<Nav />
+			<Footer />
+		</>
+	);
 }
 
 export default App;
