@@ -6,3 +6,28 @@ footer {
 	bottom: 0%;
 	color: white;
 }
+
+.footer-link {
+	margin: 20px 40px;
+}
+
+.footer-link-item {
+	border-right: 1px solid white;
+	padding: 0px 10px;
+}
+
+.footer-link-item:hover {
+	cursor: pointer;
+}
+
+.footer-link-item:first-child {
+	padding-left: 0px;
+}
+
+.footer-link-item:last-child {
+	border: 0px;
+}
+
+.footer-content {
+	margin: 20px 40px;
+}

@@ -7,7 +7,7 @@ function App() {
 	return (
 		<>
 			<Nav />
-			<Footer />
+			<Body />
 		</>
 	);
 }

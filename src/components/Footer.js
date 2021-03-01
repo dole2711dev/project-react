@@ -15,7 +15,10 @@ const Footer = () => {
 					<span className="footer-link-item">Quảng Cáo</span>
 					<span className="footer-link-item">Facebook</span>
 					<span className="footer-link-item">Youtube</span>
-					<span className="footer-link-item">DUMA</span>
+					<span className="footer-link-item">DUMA Entertainment</span>
+				</div>
+				<div className="footer-content">
+					© Since 2005 w2solution Co.,Ltd.
 				</div>
 			</footer>
 		</>

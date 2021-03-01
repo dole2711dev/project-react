@@ -3,6 +3,7 @@
 	height: 60px;
 	background-color: black;
 	position: fixed;
+	top: 0;
 }
 
 .navbar-container {
