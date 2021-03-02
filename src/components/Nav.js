@@ -29,17 +29,13 @@ const Nav = () => {
 	const [shrink, setShrink] = useState(STYLE_SHRINK[0]);
 
 	const ScrollNavBar = () => {
-		if (window.pageYOffset > 0) {
-			setShrink(STYLE_SHRINK[0]);
-		} else {
-			setShrink(STYLE_SHRINK[1]);
-		}
+		setShrink(window.pageYOffset > 0 ? STYLE_SHRINK[1] : STYLE_SHRINK[0]);
 	};
-	const handlerNavbarMenu = (e) => {
+	const handlerNavbarMenu = () => {
 		setActiveNavbar(
 			activeNavbar === STYLE_MENU_NAVBAR[0]
-				? STYLE_MENU_NAVBAR[1]
-				: STYLE_MENU_NAVBAR[0]
+				? console.log("true") //STYLE_MENU_NAVBAR[1]
+				: console.log("false") //STYLE_MENU_NAVBAR[0]
 		);
 	};
 	const handlerActiveNavbar = (e) => {};
@@ -53,50 +49,64 @@ const Nav = () => {
 				</div>
 			</div>
 			<div className="navbar-right">
-				<div className={`${activeNavbar}`}>
+				<ul className={`${activeNavbar}`}>
 					<Router>
-						<Link
-							to="/home"
-							className="expand-to-left home pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							Home
-						</Link>
-						<Link
-							to="/community"
-							className="expand-to-left community pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							Community
-						</Link>
-						<Link
-							to="/blog"
-							className="expand-to-left blog pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							Blog
-						</Link>
-						<Link
-							to="/solutions"
-							className="expand-to-left solutions pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							Solutions
-						</Link>
-						<Link
-							to="/services"
-							className="expand-to-left services pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							Services
-						</Link>
-						<Link
-							to="/about"
-							className="expand-to-left about pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							About
-						</Link>
-						<Link
-							to="/contact"
-							className="expand-to-left contact pl-20px pr-20px"
-							onClick={handlerActiveNavbar}>
-							Contact
-						</Link>
+						<li className="nav-links-item">
+							<Link
+								to="/home"
+								className="expand-to-left home pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								Home
+							</Link>
+						</li>
+						<li className="nav-links-item">
+							<Link
+								to="/community"
+								className="expand-to-left community pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								Community
+							</Link>
+						</li>
+						<li className="nav-links-item">
+							<Link
+								to="/blog"
+								className="expand-to-left blog pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								Blog
+							</Link>
+						</li>
+						<li className="nav-links-item">
+							<Link
+								to="/solutions"
+								className="expand-to-left solutions pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								Solutions
+							</Link>
+						</li>
+						<li className="nav-links-item">
+							<Link
+								to="/services"
+								className="expand-to-left services pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								Services
+							</Link>
+						</li>
+						<li className="nav-links-item">
+							<Link
+								to="/about"
+								className="expand-to-left about pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								About
+							</Link>
+						</li>
+						<li className="nav-links-item">
+							<Link
+								to="/contact"
+								className="expand-to-left contact pl-20px pr-20px"
+								onClick={handlerActiveNavbar}>
+								Contact
+							</Link>
+						</li>
 						<Switch>
 							<Route path="/home">
 								<Home />
@@ -121,7 +131,7 @@ const Nav = () => {
 							</Route>
 						</Switch>
 					</Router>
-				</div>
+				</ul>
 				<span
 					className="navbar-icon-menu fas fa-bars"
 					onClick={handlerNavbarMenu}></span>
