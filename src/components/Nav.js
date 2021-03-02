@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Nav.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import components
@@ -12,8 +12,40 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 const Nav = () => {
+	useEffect(() => {
+		function CheckScroll() {
+			window.addEventListener("scroll", ScrollNavBar);
+		}
+		CheckScroll();
+		return () => {
+			window.removeEventListener("scroll", ScrollNavBar);
+		};
+	});
+
+	const STYLE_MENU_NAVBAR = useState(["navbar-menu", "navbar-menu-active"]);
+	const STYLE_SHRINK = ["shrink-top", "shrink"];
+
+	const [activeNavbar, setActiveNavbar] = useState(STYLE_MENU_NAVBAR[0]);
+	const [shrink, setShrink] = useState(STYLE_SHRINK[0]);
+
+	const ScrollNavBar = () => {
+		if (window.pageYOffset > 0) {
+			setShrink(STYLE_SHRINK[0]);
+		} else {
+			setShrink(STYLE_SHRINK[1]);
+		}
+	};
+	const handlerNavbarMenu = (e) => {
+		setActiveNavbar(
+			activeNavbar === STYLE_MENU_NAVBAR[0]
+				? STYLE_MENU_NAVBAR[1]
+				: STYLE_MENU_NAVBAR[0]
+		);
+	};
+	const handlerActiveNavbar = (e) => {};
+
 	return (
-		<div className="navbar pl-30px">
+		<div className={`navbar pl-30px ${shrink}`}>
 			<div className="navbar-left">
 				<div className="br-test">
 					<i className="navbar-icon pr-10px fab fa-asymmetrik"></i>
@@ -21,33 +53,48 @@ const Nav = () => {
 				</div>
 			</div>
 			<div className="navbar-right">
-				<div className="navbar-menu">
+				<div className={`${activeNavbar}`}>
 					<Router>
-						<Link to="/home" className="home pl-30px pr-30px">
+						<Link
+							to="/home"
+							className="expand-to-left home pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							Home
 						</Link>
 						<Link
 							to="/community"
-							className="community pl-30px pr-30px">
+							className="expand-to-left community pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							Community
 						</Link>
-						<Link to="/blog" className="blog pl-30px pr-30px">
+						<Link
+							to="/blog"
+							className="expand-to-left blog pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							Blog
 						</Link>
 						<Link
 							to="/solutions"
-							className="solutions pl-30px pr-30px">
+							className="expand-to-left solutions pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							Solutions
 						</Link>
 						<Link
 							to="/services"
-							className="services pl-30px pr-30px">
+							className="expand-to-left services pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							Services
 						</Link>
-						<Link to="/about" className="about pl-30px pr-30px">
+						<Link
+							to="/about"
+							className="expand-to-left about pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							About
 						</Link>
-						<Link to="/contact" className="contact pl-30px pr-30px">
+						<Link
+							to="/contact"
+							className="expand-to-left contact pl-20px pr-20px"
+							onClick={handlerActiveNavbar}>
 							Contact
 						</Link>
 						<Switch>
@@ -75,6 +122,9 @@ const Nav = () => {
 						</Switch>
 					</Router>
 				</div>
+				<span
+					className="navbar-icon-menu fas fa-bars"
+					onClick={handlerNavbarMenu}></span>
 			</div>
 		</div>
 	);
