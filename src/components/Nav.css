@@ -6,6 +6,8 @@
 	height: 80px;
 	background-color: #fff;
 	color: rgb(255, 50, 50);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.411);
+	z-index: -1;
 }
 
 .navbar-left {
@@ -52,11 +54,23 @@
 	color: rgb(255, 50, 50);
 }
 
+.navbar-right .navbar-icon-menu {
+	color: #000;
+	padding-bottom: 2px;
+	padding-left: 15px;
+}
+
+.navbar-right .navbar-icon-menu:hover {
+	color: rgb(255, 50, 50);
+	transition: all 0.2s ease;
+}
+
 .shrink {
 	height: 50px;
 	position: fixed;
 	top: 0;
 	transition: all 0.2s ease-in-out;
+	padding: 20px 20px;
 }
 
 .shrink-top {
@@ -88,21 +102,24 @@
 	.navbar-right ul {
 		display: flex;
 		flex-direction: column;
-		width: 100%;
-		height: 90vh;
+		width: 20%;
+		height: 100vh;
 		position: absolute;
-		top: 80px;
-		left: -100%;
+		top: 0;
+		right: -100%;
 		opacity: 1;
 		transition: all 0.5s ease;
 		justify-content: flex-start;
 	}
 
 	.navbar-right ul.navbar-menu-active {
-		background: #242222;
-		left: 0;
+		padding-top: 100px;
+		background: rgb(242, 242, 242);
+		right: 0;
 		opacity: 1;
 		transition: all 0.5s ease;
+		box-shadow: 1px 1px 10px rgb(190, 190, 190);
 		z-index: 1;
+		overflow: hidden;
 	}
 }

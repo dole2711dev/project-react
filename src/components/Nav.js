@@ -22,11 +22,13 @@ const Nav = () => {
 		};
 	});
 
-	const STYLE_MENU_NAVBAR = useState(["navbar-menu", "navbar-menu-active"]);
+	const STYLE_MENU_NAVBAR = ["navbar-menu", "navbar-menu-active"];
 	const STYLE_SHRINK = ["shrink-top", "shrink"];
+	const STYLE_ICON_MENU = ["fas fa-bars", "fas fa-times"];
 
 	const [activeNavbar, setActiveNavbar] = useState(STYLE_MENU_NAVBAR[0]);
 	const [shrink, setShrink] = useState(STYLE_SHRINK[0]);
+	const [iconMenu, setIconMenu] = useState(STYLE_ICON_MENU[0]);
 
 	const ScrollNavBar = () => {
 		setShrink(window.pageYOffset > 0 ? STYLE_SHRINK[1] : STYLE_SHRINK[0]);
@@ -34,8 +36,13 @@ const Nav = () => {
 	const handlerNavbarMenu = () => {
 		setActiveNavbar(
 			activeNavbar === STYLE_MENU_NAVBAR[0]
-				? console.log("true") //STYLE_MENU_NAVBAR[1]
-				: console.log("false") //STYLE_MENU_NAVBAR[0]
+				? STYLE_MENU_NAVBAR[1]
+				: STYLE_MENU_NAVBAR[0]
+		);
+		setIconMenu(
+			iconMenu === STYLE_ICON_MENU[0]
+				? STYLE_ICON_MENU[1]
+				: STYLE_ICON_MENU[0]
 		);
 	};
 	const handlerActiveNavbar = (e) => {};
@@ -133,7 +140,7 @@ const Nav = () => {
 					</Router>
 				</ul>
 				<span
-					className="navbar-icon-menu fas fa-bars"
+					className={`navbar-icon-menu ${iconMenu}`}
 					onClick={handlerNavbarMenu}></span>
 			</div>
 		</div>
