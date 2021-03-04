@@ -7,7 +7,6 @@
 	background-color: #fff;
 	color: rgb(255, 50, 50);
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.411);
-	z-index: -1;
 }
 
 .navbar-left {
@@ -54,16 +53,37 @@
 	color: rgb(255, 50, 50);
 }
 
-.navbar-right .navbar-icon-menu {
-	color: #000;
-	padding-bottom: 2px;
-	padding-left: 15px;
+.menu-icon {
+	display: inline-block;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
 }
 
-.navbar-right .navbar-icon-menu:hover {
-	color: rgb(255, 50, 50);
-	transition: all 0.2s ease;
+/* Begin Css for icon menu */
+.menu-icon-bar1,
+.menu-icon-bar2,
+.menu-icon-bar3 {
+	width: 30px;
+	height: 5px;
+	background-color: #000;
+	margin: 4px 0;
+	transition: 0.4s;
 }
+
+.active .menu-icon-bar1 {
+	-webkit-transform: rotate(-45deg) translate(-8px, 5px);
+	transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+.active .menu-icon-bar2 {
+	opacity: 0;
+}
+
+.active .menu-icon-bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, 5px);
+	transform: rotate(45deg) translate(-8px, -5px);
+}
+/* End Css for icon menu */
 
 .shrink {
 	height: 50px;

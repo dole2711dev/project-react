@@ -24,7 +24,7 @@ const Nav = () => {
 
 	const STYLE_MENU_NAVBAR = ["navbar-menu", "navbar-menu-active"];
 	const STYLE_SHRINK = ["shrink-top", "shrink"];
-	const STYLE_ICON_MENU = ["fas fa-bars", "fas fa-times"];
+	const STYLE_ICON_MENU = ["", "active"];
 
 	const [activeNavbar, setActiveNavbar] = useState(STYLE_MENU_NAVBAR[0]);
 	const [shrink, setShrink] = useState(STYLE_SHRINK[0]);
@@ -89,6 +89,23 @@ const Nav = () => {
 								onClick={handlerActiveNavbar}>
 								Solutions
 							</Link>
+							<ul className="nav-links-item-title">
+								<li className="nav-link-item-child">
+									Mobile Application
+								</li>
+								<li className="nav-link-item-child">
+									Website & Microsite
+								</li>
+								<li className="nav-link-item-child">
+									eCommmerce
+								</li>
+								<li className="nav-link-item-child">
+									Đeicated Devolopment Team
+								</li>
+								<li className="nav-link-item-child">
+									Business Application
+								</li>
+							</ul>
 						</li>
 						<li className="nav-links-item">
 							<Link
@@ -139,9 +156,13 @@ const Nav = () => {
 						</Switch>
 					</Router>
 				</ul>
-				<span
-					className={`navbar-icon-menu ${iconMenu}`}
-					onClick={handlerNavbarMenu}></span>
+				<div
+					className={`menu-icon ${iconMenu}`}
+					onClick={handlerNavbarMenu}>
+					<div className="menu-icon-bar1"></div>
+					<div className="menu-icon-bar2"></div>
+					<div className="menu-icon-bar3"></div>
+				</div>
 			</div>
 		</div>
 	);
