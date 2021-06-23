@@ -6,17 +6,37 @@ const Footer = () => {
 		<>
 			<footer>
 				<div className="footer-link">
-					<span className="footer-link-item">Giới thiệu</span>
-					<span className="footer-link-item">Điều khoản</span>
-					<span className="footer-link-item">Bảo mật</span>
-					<span className="footer-link-item">Hướng dẫn</span>
-					<span className="footer-link-item">Ứng dụng</span>
-					<span className="footer-link-item">Liên hệ</span>
-					<span className="footer-link-item">Quảng Cáo</span>
-					<span className="footer-link-item">Facebook</span>
-					<span className="footer-link-item">Youtube</span>
-					<span className="footer-link-item">DUMA</span>
+					<ul className="footer-link-items">
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Giới thiệu</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Điều khoản</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Bảo mật</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Hướng dẫn</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Ứng dụng</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Liên hệ</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Quảng Cáo</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Facebook</a>
+						</li>
+						<li className="footer-link-item pr-10px pl-10px">
+							<a href="/">Youtube</a>
+						</li>
+					</ul>
 				</div>
+				<div className="footer-content"></div>
 			</footer>
 		</>
 	);
